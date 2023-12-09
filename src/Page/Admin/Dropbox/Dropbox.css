@@ -1,0 +1,78 @@
+.Dropbox {
+    margin: auto;
+}
+
+.Dropbox__header {
+    font-size: xx-large;
+    color: #1976d2;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px auto;
+    max-width: 90%;
+    min-width: 90%;
+}
+
+.Dropbox__box {
+    margin: 0 auto;
+    max-width: 90%;
+    min-width: 90%;
+}
+
+.Dropbox__text__box {
+    margin-bottom: 30px;
+    padding: 2%;
+    border: 1px solid lightgray;
+}
+
+.Dropbox__text__container {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.Dropbox__text__container__2 {
+    margin-top: 20px;
+    padding: 5px;
+
+}
+
+.Dropbox__text__title {
+    min-width: 12%;
+    max-width: 12%;
+    font-size: large;
+    font-weight: bolder;
+    border-right: 1px solid lightgray;
+}
+
+.Dropbox__text__title__2 {
+    font-size: large;
+    font-weight: bolder;
+}
+
+.Dropbox__text {
+    min-width: 35%;
+    max-width: 35%;
+    font-size: large;
+    text-align: left;
+    background-color: rgba(173, 216, 230, 0.4);
+    border-radius: 2px;
+    padding: 7px;
+
+}
+
+.Dropbox__text__2 {
+    font-size: large;
+    text-align: left;
+    background-color: rgba(173, 216, 230, 0.4);
+    border-radius: 2px;
+    padding: 10px 20px;
+    margin-top: 15px;
+    white-space: pre-wrap;
+}
+@media only screen and (max-width: 840px){
+    .Dropbox__tabs .css-heg063-MuiTabs-flexContainer{
+      overflow: scroll;
+    }
+  }

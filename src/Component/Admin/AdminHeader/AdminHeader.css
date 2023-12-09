@@ -1,0 +1,38 @@
+.admin__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    padding: 5px 10%;
+    background-color: white;
+    overflow: hidden;
+    height: 40px;
+    border-bottom: 1px solid lightblue;
+}
+
+.admin__header__image {
+    min-width: 4%;
+    max-width: 25%;
+    max-height: 40px;
+    cursor: pointer;
+}
+
+.admin__header__space {
+    width: 60%;
+}
+
+.admin__header__admin {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 5%;
+    max-width: 60%;
+}
+.admin__header__admin__text{
+    font-size: small;
+}
+.admin__header__userimg {
+    cursor: pointer;
+    height: 40px;
+    margin: 0 10px 0 10px;
+}

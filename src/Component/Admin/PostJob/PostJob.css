@@ -1,0 +1,65 @@
+.postJob{
+    margin: auto;
+    padding: 0;
+    width: 93%;
+}
+ .postJob__StartButtons{
+        display: flex;
+        width: 91%;
+        margin: 0 auto;
+    }
+.postJob__form{
+    margin: 0 auto;
+    min-width: 90%;
+    max-width: 90%;
+    padding: 6px 4px;
+}
+.textField__container{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+}
+.textField{
+    text-align: center;
+    min-width: 48%;
+    max-width: 48%;
+    margin: 15px 0 10px 0;
+}
+.textField__big{
+    text-align: center;
+    width: 100%;
+    margin: 15px auto 10px auto;
+}
+@media only screen and (max-width: 680px){
+    .postJob__StartButtons{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin: 0;
+    }
+    .postJob__form{
+        margin: 0 auto;
+        min-width: 95%;
+        max-width: 95%;
+        padding: 6px 4px;
+    }
+    .textField__container{
+        display: block;
+        justify-content: space-between;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .textField{
+        text-align: center;
+        min-width: 100%;
+        max-width: 100%;
+        margin: 15px 0 10px 0;
+    }
+    .textField__big{
+        text-align: center;
+        width: 100%;
+        margin: 15px auto 10px auto;
+    }
+}

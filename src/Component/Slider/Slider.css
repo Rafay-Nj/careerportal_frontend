@@ -1,0 +1,269 @@
+*{
+  scroll-behavior: smooth;
+}
+.Slider{
+    padding: 30px 0px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Slider__btn{
+  margin: 0 10px;
+  color: white;
+  background-color: #00838d;
+  cursor: pointer;
+  opacity: 60%;
+  border-radius: 100%;
+}
+.Slider__btn__icon{
+  font-size: 55px;
+}
+.Slider__btn__box{
+  display: flex;
+  padding-top: 30px;
+}
+.Slider__btn:hover{
+  opacity: 90%;
+  transform: scale(1.1);
+
+}
+  .Slider__department__tab__section {
+    position: absolute;
+    top: 63.7%;
+    /* left: 10%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    width: 80%;
+    overflow: visible;
+  }
+  
+  .Slider__department__tabs {
+    padding: 0px 0px;
+    min-width: 85%;
+    max-width: 85%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    /* overflow: auto; */
+    transition: all 0.1s;
+    /* transform: scale(0.98); */
+    /* will-change: transform; */
+    user-select: none;
+    cursor: pointer;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+    /* display: inline-block; */
+    display: flex;
+    /* justify-content: space-between; */
+    background: #ffffff;
+    box-shadow: #00838d 0px 5px 10px -2px, #00838d 0px 3px 6px -3px;
+    /* box-shadow: 4px 2px 15px #00838d; */
+    border-radius: 25px;
+  }
+  .Slider__department__tabs.active {
+    /* background: rgba(255,255,255,0.3); */
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+    /* transform: scale(1); */
+  }
+.Slider__department__tab {
+    min-width: 250px;
+    max-width: 250px;
+    border-right: 1px solid rgb(122,122,122,0.5);
+    padding: 0 15px;
+    height: 60px;
+    font-weight: bold;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0px;
+    text-decoration: none;
+    /* z-index: 4; */
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+  }
+  .Slider__department__tab:hover {
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: all 0.2s ease-in-out;
+    /* z-index: 5; */
+    /* height: 90px; */
+    overflow: visible;
+    background-color: #00838d;
+    box-shadow: 0px 1px 15px #1b1b1b;
+    color: #fff;
+  }
+  .Slider__department__tab__active{
+    min-width: 250px;
+    max-width: 250px;
+    /* max-width: 33%; */
+    height: 60px;
+    font-weight: bold;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0px;
+    text-decoration: none;
+    /* z-index: 4; */
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    /* border-radius: 25px; */
+    background-color: #00838d;
+    box-shadow: 0px 1px 15px #1b1b1b;
+    color: #fff;
+  }
+  @media only screen and (max-width: 1200px){
+    .Slider__btn{
+      margin: 0 10px;
+      color: #00838d;
+      background-color: #fff;
+      cursor: pointer;
+      opacity: 80%;
+      border-radius: 100%;
+    
+    }
+    .Slider__btn__icon{
+      font-size: 45px;
+    }
+      .Slider__department__tab__section {
+        padding: 15px;
+        width: 95%;
+        overflow: hidden;
+      }
+      
+      .Slider__department__tabs {
+        min-width: 80%;
+        max-width: 80%;
+        min-height: 55px;
+        max-height: 55px;
+      }
+    .Slider__department__tab {
+        min-width: 39%;
+        max-width: 39%;
+        height: 55px;
+        font-size: 1.5vw;
+        font-weight: bold;
+        display: flex;
+        overflow: hidden;
+        align-items: center;
+        justify-content: center;
+        margin: 0 0px;
+        text-decoration: none;
+        /* z-index: 4; */
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+        /* border-radius: 25px; */
+      }
+      .Slider__department__tab:hover {
+        -ms-transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+        transition: all 0.2s ease-in-out;
+        /* z-index: 5; */
+        /* height: 90px; */
+        overflow: visible;
+        background-color: #00838d;
+        box-shadow: 0px 1px 15px #1b1b1b;
+        color: #fff;
+      }
+      .Slider__department__tab__active{
+        min-width: 23%;
+        /* max-width: 33%; */
+        height: 55px;
+        font-size: 1.7vw;
+        font-weight: bold;
+        display: flex;
+        overflow: hidden;
+        align-items: center;
+        justify-content: center;
+        margin: 0 0px;
+        text-decoration: none;
+        /* z-index: 4; */
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+        /* border-radius: 25px; */
+        background-color: #00838d;
+        box-shadow: 0px 1px 15px #1b1b1b;
+        color: #fff;
+      }
+  }
+ 
+  @media only screen and (max-width: 650px){
+    .Slider__btn{
+      margin: 0 15px;
+      background-color: transparent;
+    
+    }
+    .Slider__btn__icon{
+      font-size: 40px;
+    }
+    .Slider__btn__box{
+      display: flex;
+      padding-top: 5px;
+    }
+      .Slider__department__tab__section {
+        position: absolute;
+        top: 55.5%;
+        width: 100%;
+      }
+      
+      .Slider__department__tabs {
+        min-width: 90%;
+        max-width: 90%;
+        min-height: 40px;
+        max-height: 40px;
+      }
+    .Slider__department__tab {
+        min-width: 50%;
+        max-width: 50%;
+        height: 40px;
+        font-size: 3vw;
+        font-weight: bold;
+        display: flex;
+        overflow: hidden;
+        align-items: center;
+        justify-content: center;
+        margin: 0 0px;
+        text-decoration: none;
+        /* z-index: 4; */
+        cursor: pointer;
+        transition: 0.2s ease-in-out;
+      }
+      .Slider__department__tab:hover {
+        -ms-transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+        transition: all 0.2s ease-in-out;
+        /* z-index: 5; */
+        /* height: 90px; */
+        overflow: visible;
+        background-color: #00838d;
+        box-shadow: 0px 1px 15px #1b1b1b;
+        color: #fff;
+      }
+      .Slider__department__tab__active{
+        min-width: 50%;
+        max-width: 50%;
+        height: 40px;
+        font-weight: bold;
+        display: flex;
+        overflow: hidden;
+        align-items: center;
+        justify-content: center;
+        margin: 0 0px;
+        text-decoration: none;
+        /* z-index: 4; */
+        cursor: pointer;
+        font-size: 10px;
+        transition: 0.2s ease-in-out;
+        /* border-radius: 25px; */
+        background-color: #00838d;
+        box-shadow: 0px 1px 15px #1b1b1b;
+        color: #fff;
+      }
+  }

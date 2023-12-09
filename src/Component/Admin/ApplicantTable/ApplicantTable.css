@@ -1,0 +1,26 @@
+.ApplicantTable__NoData{
+    min-height: 65vh;
+    width: 95%;
+    border-radius: 5px;
+    background-color: rgba(211, 211, 211, 0.2);
+    border: 1px solid lightgray;
+    color: gray;
+    font-size: larger;
+    padding: 5vh 0 0 5vh;
+    margin : 10px 0 0 0;
+}
+.ApplicantTable__Loading{
+    position: absolute;
+    min-height: 70vh;
+    width: 75vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: rgb(122, 122, 122 , 0.5);
+    border: 1px solid lightgray;
+    cursor: not-allowed;
+    color: blue;
+    z-index: 1000 !important;
+    font-size: larger;
+}

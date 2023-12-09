@@ -1,0 +1,33 @@
+.file-item {
+    list-style: none;
+    margin: 1.2em 0;
+    background-color: #7c7c7b38;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding: 1.2em 1.5em;
+}
+
+.file-item>svg {
+    color: #f55321;
+}
+
+.file-item>svg:first-child {
+    font-size: 1.2em;
+    margin-right: 0.8em;
+}
+
+
+.file-item>p {
+    flex: 1;
+    font-size: 0.9rem;
+}
+
+.file-item>.actions {
+    justify-self: flex-end;
+    cursor: pointer;
+}
+
+.file-item>.actions .fa-spinner {
+    font-size: 1.2em;
+}

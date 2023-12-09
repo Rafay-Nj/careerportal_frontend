@@ -1,0 +1,108 @@
+.JobApplicant {
+  margin: auto;
+}
+
+.JobApplicant__header {
+  font-size: xx-large;
+  color: #1976d2;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px auto;
+  max-width: 80%;
+  min-width: 80%;
+}
+
+.JobApplicant__box {
+  margin: 0 auto;
+  max-width: 80%;
+  min-width: 80%;
+}
+
+.JobApplicant__text__box {
+  margin-bottom: 30px;
+  padding: 2%;
+  border: 1px solid lightgray;
+}
+
+.JobApplicant__text__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+
+.JobApplicant__text__container__2 {
+  margin-top: 20px;
+  padding: 5px;
+}
+
+.JobApplicant__text__title {
+  min-width: 12%;
+  max-width: 12%;
+  font-size: large;
+  font-weight: 500;
+  border-right: 1px solid lightgray;
+  color: #1976d2;
+}
+
+.JobApplicant__text__title__2 {
+  font-size: large;
+  color: #1976d2;
+  font-weight: 500;
+}
+
+.JobApplicant__text {
+  min-width: 35%;
+  max-width: 35%;
+  font-size: large;
+  text-align: left;
+  background-color: rgba(173, 216, 230, 0.4);
+  border-radius: 2px;
+  padding: 7px;
+}
+
+#link{
+  white-space: pre-wrap; /* CSS3 */    
+  white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+  white-space: -pre-wrap; /* Opera 4-6 */    
+  white-space: -o-pre-wrap; /* Opera 7 */    
+  word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
+
+.JobApplicant__text__2 {
+  font-size: large;
+  text-align: left;
+  background-color: rgba(173, 216, 230, 0.4);
+  border-radius: 2px;
+  padding: 10px 20px;
+  margin-top: 15px;
+  white-space: pre-wrap;
+}
+
+@media only screen and (max-width: 900px) {
+  .JobApplicant__header {
+    font-weight: 600;
+    display: block;
+  }
+
+  .JobApplicant__text__container {
+    display: block;
+  }
+
+  .JobApplicant__text__title {
+    min-width: none;
+    max-width: none;
+    margin-top: 15px;
+
+  }
+
+  .JobApplicant__text {
+    padding: 10px 20px;
+    margin-top: 15px;
+    white-space: pre-wrap;
+    min-width: none;
+    max-width: none;
+  }
+}

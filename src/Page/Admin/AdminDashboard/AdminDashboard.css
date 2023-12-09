@@ -1,0 +1,45 @@
+.AdminDashboard{
+    min-width: 83%;
+    max-width: 83%;
+    margin: auto;
+    padding: 0;
+}
+.AdminDashboard__box_1{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+.AdminDashboard__box_1_content{
+min-width: 24.5%;
+max-width: 24.5%;
+}
+.AdminDashboard__box_2{
+    margin-bottom: 50px;
+}
+.AdminDashboard__box_3{
+    display: flex;
+    justify-content: space-between;
+
+}
+.AdminDashboard__box_3__content{
+    width: 48%;
+}
+@media only screen and (max-width: 750px){
+    .AdminDashboard__box_1{
+        display: block;
+        margin-bottom: 30px;
+    }
+    .AdminDashboard__box_1_content{
+    min-width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    }
+    .AdminDashboard__box_3{
+        display: block;    
+    }
+    .AdminDashboard__box_3__content{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+}
