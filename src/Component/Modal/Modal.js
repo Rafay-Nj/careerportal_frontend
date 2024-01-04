@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useCallback, useState } from "react";
 import { useSpring, animated } from "react-spring";
 import styled from "styled-components";
 import { MdClose } from "react-icons/md";
-import logo from "../../assets/mP-logo.png";
+import logo from "../../assets/logo.png";
 import "./Modal.css";
 import { AiOutlinePlusCircle } from 'react-icons/ai';
 import Button from "../Button/Button";
@@ -42,7 +42,7 @@ const CloseModalButton = styled(MdClose)`
   padding: 0;
 `;
 
-export const Modal = ({ emp, showModal, setShowModal, showItem }) => {
+export const Modal = ({ showModal, setShowModal, showItem }) => {
   const modalRef = useRef();
 
   const [applying, setApplying] = useState(false);
@@ -50,34 +50,34 @@ export const Modal = ({ emp, showModal, setShowModal, showItem }) => {
   const [FileDetails, setFileDetails] = useState(null);
   const [FileRaw, setFileRaw] = useState(null);
 
-  function handleFileButton(e) {
-    setOpen(true);
-    var file = e.target.files[0]
-    var reader = new FileReader()
-    reader.readAsDataURL(file)
-    reader.onload = function (e) {
-      setFileRaw(reader.result.split(',')[1]);
-      setFileDetails(file)
-      setOpen(false);
-    }
-  }
+  // function handleFileButton(e) {
+  //   setOpen(true);
+  //   var file = e.target.files[0]
+  //   var reader = new FileReader()
+  //   reader.readAsDataURL(file)
+  //   reader.onload = function (e) {
+  //     setFileRaw(reader.result.split(',')[1]);
+  //     setFileDetails(file)
+  //     setOpen(false);
+  //   }
+  // }
 
-  const [jobApply, setJobApply] = useState({ CNIC: "", fullName: "", previousDesignation: "", email: "", phone: "", city: "", resume: "", motivationStatement: "", jobRef: null, })
+  const [jobApply, setJobApply] = useState({ CNIC: "", fullName: "", previousDesignation: "", email: "", phone: "", city: "", motivationStatement: "", jobRef: null, })
   const handleChange = (e) => {
     let { name, value } = e.target;
     setJobApply({ ...jobApply, [name]: value })
   }
   const handleSubmit = () => {
-    if (emp && emp.empname) {
-      jobApply.fullName = emp.empname
-    }
-    if (emp && emp.empdesignation) {
-      jobApply.previousDesignation = emp.empdesignation
-    }
-    if (!FileDetails || !FileRaw) {
-      alert({ message: "Please upload your resume", type: "warning" });
-      return;
-    }
+    // if (emp && emp.empname) {
+    //   jobApply.fullName = emp.empname
+    // }
+    // if (emp && emp.empdesignation) {
+    //   jobApply.previousDesignation = emp.empdesignation
+    // }
+    // if (!FileDetails || !FileRaw) {
+    //   alert({ message: "Please upload your resume", type: "warning" });
+    //   return;
+    // }
     if (jobApply && jobApply.city && jobApply.city === "Select City") {
       alert({ message: "Please select a city", type: "warning" });
       return;
@@ -109,13 +109,13 @@ export const Modal = ({ emp, showModal, setShowModal, showItem }) => {
     }
     else {
       setOpen(true)
-      var rawLog = FileRaw
-      var dataSend = { dataReq: { data: rawLog, name: FileDetails.name, type: FileDetails.type }, fname: "uploadFilesToGoogleDrive" };
-      fetch('https://script.google.com/macros/s/AKfycbyhScudEcnCm-ucQ4F92VOXrfrpRUL7vUcbzn0ZYqqTo8Kbo05bI0YEwF-d3hIVeejU1w/exec',
-        { method: "POST", body: JSON.stringify(dataSend) })
-        .then(res => res.json())
-        .then((a) => {
-          var link = a.url.toString();
+      // var rawLog = FileRaw
+      // var dataSend = { dataReq: { data: rawLog, name: FileDetails.name, type: FileDetails.type }, fname: "uploadFilesToGoogleDrive" };
+      // fetch('https://script.google.com/macros/s/AKfycbyhScudEcnCm-ucQ4F92VOXrfrpRUL7vUcbzn0ZYqqTo8Kbo05bI0YEwF-d3hIVeejU1w/exec',
+        // { method: "POST", body: JSON.stringify(dataSend) })
+        // .then(res => res.json())
+        // .then((a) => {
+          // var link = a.url.toString();
           axios
             .post(process.env.REACT_APP_BACKEND_URL + "api/applications/apply", {
               "CNIC": jobApply.CNIC,
@@ -124,7 +124,7 @@ export const Modal = ({ emp, showModal, setShowModal, showItem }) => {
               "email": jobApply.email,
               "phone": jobApply.phone,
               "city": jobApply.city,
-              "resume": link,
+              // "resume": link,
               "motivationStatement": jobApply.motivationStatement,
               "jobRef": jobApply.jobRef
             })
@@ -134,7 +134,7 @@ export const Modal = ({ emp, showModal, setShowModal, showItem }) => {
                 alert({ message: res.data.message, type: "warning", });
                 console.log(res);
               } else {
-                setJobApply({ CNIC: "", fullName: "", previousDesignation: "", email: "", phone: "", city: "", resume: "", motivationStatement: "", jobRef: jobApply.jobRef });
+                setJobApply({ CNIC: "", fullName: "", previousDesignation: "", email: "", phone: "", city: "", motivationStatement: "", jobRef: jobApply.jobRef });
                 setOpen(false)
                 alert({ message: res.data.message, type: "success", });
                 setShowModal(false);
@@ -145,11 +145,11 @@ export const Modal = ({ emp, showModal, setShowModal, showItem }) => {
               alert({ message: "An unexpected error occurred. Please try again", type: "warning", });
               console.log(error);
             });
-        }).catch((e) => {
-          setOpen(false);
-          console.log(e);
-          alert({ message: "File Uploaded Failed. Please try again", type: "warning" })
-        })
+        // }).catch((e) => {
+        //   setOpen(false);
+        //   console.log(e);
+        //   alert({ message: "File Uploaded Failed. Please try again", type: "warning" })
+        // })
     }
   };
 
@@ -260,20 +260,20 @@ export const Modal = ({ emp, showModal, setShowModal, showItem }) => {
           <div className="req">
             <span className="asterisk">*</span>Required fields
           </div>
-          <div className="personal__info__heading">{emp ? `Personal Information of Employee No: ${emp.empid}` : "Personal Information"}</div>
+          <div className="personal__info__heading">{"Personal Information"}</div>
           <hr className="dash__divider" />
           <div class="input-box">
             <div>
               <label>
                 Full Name:
                 <input
-                  value={emp ? emp.empname : jobApply.fullName}
+                  value={jobApply.fullName}
                   onChange={handleChange}
                   type="text"
                   name="fullName"
                   placeholder="Full Name"
                   required
-                  disabled={emp ? true : false}
+                  disabled={false}
                 />
 
               </label>
@@ -282,9 +282,9 @@ export const Modal = ({ emp, showModal, setShowModal, showItem }) => {
               <label>
                 Previous Designation:
                 <input type="text" name="previousDesignation"
-                  value={emp ? emp.empdesignation : jobApply.previousDesignation}
+                  value={jobApply.previousDesignation}
                   onChange={handleChange}
-                  disabled={emp ? true : false}
+                  disabled={false}
                   placeholder="Enter 'none' if not applicable"
                 />
               </label>
@@ -364,7 +364,7 @@ export const Modal = ({ emp, showModal, setShowModal, showItem }) => {
                 />
               </label>
             </div>
-            <div className="apply__resume">
+            {/* <div className="apply__resume">
               <label>
                 Resume:
                 <div className="apply__doc__support__text2">
@@ -382,7 +382,7 @@ export const Modal = ({ emp, showModal, setShowModal, showItem }) => {
                   }
                 </div>
               </label>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="apply__doc__support__text">

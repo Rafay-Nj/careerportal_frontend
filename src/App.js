@@ -36,49 +36,49 @@ function AdminWhole() {
   );
 }
 
-// function JobApplicationWhole() {
-//   const [refresh, setrefresh] = React.useState(true);
-//   return (
-//     <div className="App">
-//       {(sessionStorage.getItem("token"))
-//         ? <>
-//           <AdminHeader setrefresh={(item) => { setrefresh(item) }} refresh={refresh} />
-//           <JobApplication />
-//         </>
-//         : <AdminLogin setrefresh={(item) => { setrefresh(item) }} refresh={refresh} />
-//       }
-//     </div>
-//   );
-// }
+function JobApplicationWhole() {
+  const [refresh, setrefresh] = React.useState(true);
+  return (
+    <div className="App">
+      {(sessionStorage.getItem("token"))
+        ? <>
+          <AdminHeader setrefresh={(item) => { setrefresh(item) }} refresh={refresh} />
+          <JobApplication />
+        </>
+        : <AdminLogin setrefresh={(item) => { setrefresh(item) }} refresh={refresh} />
+      }
+    </div>
+  );
+}
 
-// function JobApplicantWhole() {
-//   const [refresh, setrefresh] = React.useState(true);
-//   return (
-//     <div className="App">
-//       {(sessionStorage.getItem("token"))
-//         ? <>
-//           <AdminHeader setrefresh={(item) => { setrefresh(item) }} refresh={refresh} />
-//           <JobApplicant />
-//         </>
-//         : <AdminLogin setrefresh={(item) => { setrefresh(item) }} refresh={refresh} />
-//       }
-//     </div>
-//   );
-// }
-// function JobDropboxWhole() {
-//   const [refresh, setrefresh] = React.useState(true);
-//   return (
-//     <div className="App">
-//       {(sessionStorage.getItem("token"))
-//         ? <>
-//           <AdminHeader setrefresh={(item) => { setrefresh(item) }} refresh={refresh} />
-//           <JobDropbox />
-//         </>
-//         : <AdminLogin setrefresh={(item) => { setrefresh(item) }} refresh={refresh} />
-//       }
-//     </div>
-//   );
-// }
+function JobApplicantWhole() {
+  const [refresh, setrefresh] = React.useState(true);
+  return (
+    <div className="App">
+      {(sessionStorage.getItem("token"))
+        ? <>
+          <AdminHeader setrefresh={(item) => { setrefresh(item) }} refresh={refresh} />
+          <JobApplicant />
+        </>
+        : <AdminLogin setrefresh={(item) => { setrefresh(item) }} refresh={refresh} />
+      }
+    </div>
+  );
+}
+function JobDropboxWhole() {
+  const [refresh, setrefresh] = React.useState(true);
+  return (
+    <div className="App">
+      {(sessionStorage.getItem("token"))
+        ? <>
+          <AdminHeader setrefresh={(item) => { setrefresh(item) }} refresh={refresh} />
+          <JobDropbox />
+        </>
+        : <AdminLogin setrefresh={(item) => { setrefresh(item) }} refresh={refresh} />
+      }
+    </div>
+  );
+}
 
 function App() {
   return (
@@ -94,13 +94,13 @@ function App() {
             <Route exact path="/admin" element={AdminWhole()} />
 
             {/* -------- "/admin/jobApplication" ---------- */}
-            {/* <Route exact path="/admin/jobApplication" element={JobApplicationWhole()} /> */}
+            <Route exact path="/admin/jobApplication" element={JobApplicationWhole()} />
 
             {/* -------- "/admin/jobApplication" ---------- */}
-            {/* <Route exact path="/admin/jobApplicant" element={JobApplicantWhole()} /> */}
+            <Route exact path="/admin/jobApplicant" element={JobApplicantWhole()} />
             
             {/* -------- "/admin/jobDropbox" ----------*/}
-            {/* <Route exact path="/admin/jobDropbox" element={JobDropboxWhole()} /> */}
+            <Route exact path="/admin/jobDropbox" element={JobDropboxWhole()} />
 
             {/* -------- ELSE ---------- */}
             <Route path="*" element={<Error />} />

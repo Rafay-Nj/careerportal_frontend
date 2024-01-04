@@ -1,5 +1,5 @@
 import React from "react";
-import { Line } from "react-chartjs-2";
+// import { Line } from "react-chartjs-2";
 const months = [
   "Jan", "Feb", "Mar",
   "Apr", "May", "Jun",
@@ -72,7 +72,8 @@ export default function Chart({ data }) {
 
   if (timeData && jobData && dropboxData) {
     return (
-      <Line data={ChartData} />
+      // <Line data={ChartData} />
+      <div>Hello</div>
     )
   } else {
     return (<div style={{

@@ -102,12 +102,12 @@ const JobApplicant = () => {
             <div className="JobApplicant__text__title">Phone No</div>
             <div className="JobApplicant__text">{(state.data.phone) ? state.data.phone : "Missing"}</div>
           </div>
-          <div className="JobApplicant__text__container">
+          {/* <div className="JobApplicant__text__container">
             <div className="JobApplicant__text__title">Is Employee?</div>
             <div className="JobApplicant__text">{(state.data.isEmployee.isTrue) === true ? "Yes" : "No"}</div>
             <div className="JobApplicant__text__title">Employee Id</div>
             <div className="JobApplicant__text">{(state.data.isEmployee.isTrue) === true ? state.data.isEmployee.employeeID : "Not an Employee"}</div>
-          </div>
+          </div> */}
           <div className="JobApplicant__text__container">
             <div className="JobApplicant__text__title">Previous Designation</div>
             <div className="JobApplicant__text">{(state.data.previousDesignation) ? state.data.previousDesignation : "Missing"}</div>

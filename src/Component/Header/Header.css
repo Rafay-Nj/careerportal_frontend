@@ -3,7 +3,7 @@
   justify-content: center;
   position: sticky;
   width: 100vw;
-  height: 70px;
+  height: 100px;
   top: 0;
   /* z-index: 1; */
   /* background: linear-gradient(
@@ -12,7 +12,7 @@
     rgb(35, 35, 49) 29.7%
   ); */
 }
-.header__scroll {
+/* .header__scroll {
   display: flex;
   justify-content: center;
   position: fixed;
@@ -25,7 +25,7 @@
     rgb(255, 255, 255) 29.5%,
     rgb(35, 35, 49) 29.7%
   );
-}
+} */
 
 .header__content {
   display: flex;
@@ -36,16 +36,16 @@
 
 .header__logo {
   height: auto;
-  max-width: 120px;
+  max-width: 100px;
   cursor: pointer;
 }
-.header__logo__scroll {
+/* .header__logo__scroll {
   margin-left: 5px;
   height: auto;
   width: 27%;
   cursor: pointer;
 
-}
+} */
 
 .header__left {
   width: 30%;

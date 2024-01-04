@@ -2,7 +2,7 @@
 //Imports
 import React from "react"
 import "./AdminLogin.css"
-import logo from "../../../assets/mP-logo.png";
+import logo from "../../../assets/logo.png";
 import { AlertContainer, alert } from 'react-custom-alert';
 import { useNavigate } from "react-router-dom";
 import LoadingButton from '@mui/lab/LoadingButton';

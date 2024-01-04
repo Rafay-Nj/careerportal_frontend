@@ -1,6 +1,6 @@
 import React from "react";
 import "./MobileNavBar.css";
-import logo from "../../assets/mP-logo.png";
+import logo from "../../assets/logo.png";
 // import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Box from "@mui/material/Box";

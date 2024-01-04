@@ -147,49 +147,49 @@ export default function Careers() {
     setShowModal((prev) => !prev);
   };
 
-  const checkEmployee = () => {
-    if (isEmployee && isEmployee.empID) {
-      setLoading(true);
-      axios.post("" + process.env.REACT_APP_BACKEND_URL + "api/employees/isEmployee", isEmployee).then((res) => {
-        if (res.data.error) {
-          alert({ message: res.data.message, type: "warning" })
-          setEmp(null);
-        } else {
-          alert({ message: res.data.message, type: "success" });
-          setEmp(res.data.data);
-        }
-        setLoading(false);
-      })
-        .catch((err) => {
-          alert({ message: "An unexpected error occured. Please try again", type: "error" });
-          console.log(err);
-          setLoading(false);
-        });
-    } else {
-      alert({ message: "Please enter an Employee ID", type: "warning" });
-    }
-  }
+  // const checkEmployee = () => {
+  //   if (isEmployee && isEmployee.empID) {
+  //     setLoading(true);
+  //     axios.post("" + process.env.REACT_APP_BACKEND_URL + "api/employees/isEmployee", isEmployee).then((res) => {
+  //       if (res.data.error) {
+  //         alert({ message: res.data.message, type: "warning" })
+  //         setEmp(null);
+  //       } else {
+  //         alert({ message: res.data.message, type: "success" });
+  //         setEmp(res.data.data);
+  //       }
+  //       setLoading(false);
+  //     })
+  //       .catch((err) => {
+  //         alert({ message: "An unexpected error occured. Please try again", type: "error" });
+  //         console.log(err);
+  //         setLoading(false);
+  //       });
+  //   } else {
+  //     alert({ message: "Please enter an Employee ID", type: "warning" });
+  //   }
+  // }
 
-  const handleChange = (e) => {
-    let { name, value } = e.target;
-    setIsEmployee({ ...isEmployee, [name]: value });
-  }
+  // const handleChange = (e) => {
+  //   let { name, value } = e.target;
+  //   setIsEmployee({ ...isEmployee, [name]: value });
+  // }
 
 
 
-  function sideToggle() {
-    return (
-      <>
-        <div className="side__toggle">
-          <div className="side__toggle__text">
-            Are you an M{"&"}P Employee?
-          </div>
-          <input className="side__toggle__input" type="text" name="empID" value={isEmployee.empID} onChange={handleChange} placeholder="Enter Employee ID" />
-          <div className="side__toggle__arrow" onClick={() => checkEmployee()}>→</div>
-        </div>
-      </>
-    )
-  }
+  // function sideToggle() {
+  //   return (
+  //     <>
+  //       <div className="side__toggle">
+  //         <div className="side__toggle__text">
+  //           Are you an M{"&"}P Employee?
+  //         </div>
+  //         <input className="side__toggle__input" type="text" name="empID" value={isEmployee.empID} onChange={handleChange} placeholder="Enter Employee ID" />
+  //         <div className="side__toggle__arrow" onClick={() => checkEmployee()}>→</div>
+  //       </div>
+  //     </>
+  //   )
+  // }
 
   function handleFileButton(e) {
     setOpen(true);
@@ -321,7 +321,7 @@ export default function Careers() {
           <div className="banner__title">CAREERS</div>
           <div className="banner__heading">WORK WITH US</div>
           <p className="banner__text">
-            Minimizing Distances, Promising Happiness.
+            Join Us and Grow your career to new heights.
           </p>
         </div>
       </div>
@@ -341,11 +341,11 @@ export default function Careers() {
       ) : (
         <>
           {jobPosts}
-          {sideToggle()}
+          {/* {sideToggle()} */}
         </>
 
       )}
-      <div className="about__section">
+      {/* <div className="about__section">
         <div className="about__us">
           <div className="careers__listing">
             <div className="about__us__heading">
@@ -370,7 +370,7 @@ export default function Careers() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="dropbox__section">
         <div className="career__dropbox">
           <div className="careers__listing">

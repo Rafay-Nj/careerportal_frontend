@@ -120,10 +120,10 @@ export default function JobApplication() {
                 email: temp[j].email,
                 phone: temp[j].phone,
                 city: temp[j].city,
-                isEmployee: temp[j].isEmployee,
+                // isEmployee: temp[j].isEmployee,
                 applicationID: data[i]._id,
                 applicantID: temp[j]._id,
-                resume: data[i].resume,
+                // resume: data[i].resume,
                 motivationStatement: data[i].motivationStatement,
                 applicationStatus: data[i].applicationStatus,
                 jobRef: data[i].jobRef,
@@ -169,7 +169,7 @@ export default function JobApplication() {
       jobObjectEdited.jobCity === "" ||
       jobObjectEdited.jobType === "" ||
       jobObjectEdited.reqExperience === "" ||
-      jobObjectEdited.forEmployees === "" ||
+      // jobObjectEdited.forEmployees === "" ||
       jobObjectEdited.jobDescription === "" ||
       jobObjectEdited.jobRequirements === "" ||
       jobObjectEdited.jobIncentives === ""
@@ -259,13 +259,13 @@ export default function JobApplication() {
             item.CNIC.slice(12, 13),
           City: item.city,
           "Previous Designation": item.previousDesignation,
-          "Resume Link": item.resume,
+          // "Resume Link": item.resume,
           About: item.motivationStatement,
           "Application Status": item.applicationStatus.status,
-          "Is Employee?": item.isEmployee.isTrue ? "Yes" : "No",
-          "Employee ID": item.isEmployee.isTrue
-            ? item.isEmployee.employeeID
-            : "Not an Employee",
+          // "Is Employee?": item.isEmployee.isTrue ? "Yes" : "No",
+          // "Employee ID": item.isEmployee.isTrue
+            // ? item.isEmployee.employeeID
+            // : "Not an Employee",
         };
       });
       setExportData(temp);
@@ -461,7 +461,7 @@ export default function JobApplication() {
                   disabled
                 />
               </div>
-              <div className="JobApplication__edit__container__3">
+              {/* <div className="JobApplication__edit__container__3">
                 <div className="JobApplication__edit__title">For Employee?</div>
 
                 <select
@@ -475,7 +475,7 @@ export default function JobApplication() {
                   <option value={true}>Yes</option>
                   <option value={false}>No</option>
                 </select>
-              </div>
+              </div> */}
               <div className="JobApplication__edit__container__2">
                 <div className="JobApplication__edit__title__2">
                   Description:
@@ -565,7 +565,7 @@ export default function JobApplication() {
                   {state.data.jobStatus ? state.data.jobStatus : "Missing"}
                 </div>
               </div>
-              <div className="JobApplication__text__container__3">
+              {/* <div className="JobApplication__text__container__3">
                 <div className="JobApplication__text__title">For Employee?</div>
                 <div className="JobApplication__text__3">
                   {state.data.forEmployees !== null
@@ -574,7 +574,7 @@ export default function JobApplication() {
                       : "No"
                     : "Missing"}
                 </div>
-              </div>
+              </div> */}
               <div className="JobApplication__text__container__2">
                 <div className="JobApplication__text__title__2">
                   Description:

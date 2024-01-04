@@ -3,7 +3,7 @@ import "./AdminHeader.css"
 import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
 import userimg from "../../../assets/user.png"
-import logo_img from "../../../assets/mP-logo.png"
+import logo_img from "../../../assets/logo.png"
 
 
 export default function Header({ refresh, setrefresh }) {
