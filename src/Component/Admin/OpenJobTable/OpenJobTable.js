@@ -92,21 +92,21 @@ export default function OpenJobTable() {
             headerName: "Experience",
             flex: 1,
           },
-          {
-            field: "Employee",
-            headerName: "For Employees?",
-            flex: 1,
-            renderCell: (employee) =>
-              employee.row.Employee === true ? (
-                <div className="employee__icon__green">
-                  <DoneIcon sx={{ color: "white" }} />
-                </div>
-              ) : (
-                <div className="employee__icon__red">
-                  <CloseIcon sx={{ color: "white" }} />
-                </div>
-              ),
-          },
+          // {
+          //   field: "Employee",
+          //   headerName: "For Employees?",
+          //   flex: 1,
+          //   renderCell: (employee) =>
+          //     employee.row.Employee === true ? (
+          //       <div className="employee__icon__green">
+          //         <DoneIcon sx={{ color: "white" }} />
+          //       </div>
+          //     ) : (
+          //       <div className="employee__icon__red">
+          //         <CloseIcon sx={{ color: "white" }} />
+          //       </div>
+          //     ),
+          // },
           // {
           //   field: "Incentives",
           //   headerName: "Incentives",

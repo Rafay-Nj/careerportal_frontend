@@ -29,18 +29,18 @@ export default function Careers() {
   const [jobPosts, setJobPosts] = useState(null);
   const [loading, setLoading] = useState(false);
   const [showItem, setShowItem] = useState(null);
-  const [emp, setEmp] = useState();
-  const [isEmployee, setIsEmployee] = useState({ empID: null })
+  // const [emp, setEmp] = useState();
+  // const [isEmployee, setIsEmployee] = useState({ empID: null })
   const [open, setOpen] = useState(false);
-  const [FileDetails, setFileDetails] = useState(null);
-  const [FileRaw, setFileRaw] = useState(null);
+  // const [FileDetails, setFileDetails] = useState(null);
+  // const [FileRaw, setFileRaw] = useState(null);
   const [dropbox, setDropbox] = useState({
     CNIC: "",
     fullname: "",
     email: "",
     phone: "",
     city: "",
-    resume: "",
+    // resume: "",
     areaOfInterest: "",
     designation: "",
   })
@@ -66,11 +66,12 @@ export default function Careers() {
     setDropbox({ ...dropbox, [name]: value })
   }
   const dropboxSubmit = () => {
-    if (!FileDetails || !FileRaw) {
-      alert({ message: "Please upload your resume", type: "warning" });
-      return;
-    }
-    else if (!dropbox.CNIC || !dropbox.fullname || !dropbox.email || !dropbox.phone || !dropbox.city || !dropbox.areaOfInterest || !dropbox.designation) {
+    // if (!FileDetails || !FileRaw) {
+    //   alert({ message: "Please upload your resume", type: "warning" });
+    //   return;
+    // }
+    // else
+    if (!dropbox.CNIC || !dropbox.fullname || !dropbox.email || !dropbox.phone || !dropbox.city || !dropbox.areaOfInterest || !dropbox.designation) {
       alert({ message: "Please fill all the required fields", type: "warning" });
       return;
     }
@@ -88,57 +89,57 @@ export default function Careers() {
     }
     else {
       setOpen(true)
-      var rawLog = FileRaw
-      var dataSend = { dataReq: { data: rawLog, name: FileDetails.name, type: FileDetails.type }, fname: "uploadFilesToGoogleDrive" };
-      fetch('https://script.google.com/macros/s/AKfycbyhScudEcnCm-ucQ4F92VOXrfrpRUL7vUcbzn0ZYqqTo8Kbo05bI0YEwF-d3hIVeejU1w/exec',
-        { method: "POST", body: JSON.stringify(dataSend) })
-        .then(res => res.json())
-        .then((a) => {
-          var link = a.url.toString();
-          axios.post(process.env.REACT_APP_BACKEND_URL + "api/dropbox/applyviadropbox", {
-            "dropbox_app": {
-              CNIC: dropbox.CNIC,
-              fullname: dropbox.fullname,
-              email: dropbox.email,
-              phone: dropbox.phone,
-              city: dropbox.city,
-              resume: link,
-              areaOfInterest: dropbox.areaOfInterest,
-              designation: dropbox.designation,
-            }
-          }).then((res) => {
-            if (res.data.error === true) {
-              setOpen(false)
-              alert({ message: res.data.message, type: "warning" });
-            } else {
-              setDropbox(
-                {
-                  CNIC: "",
-                  fullname: "",
-                  email: "",
-                  phone: "",
-                  city: "",
-                  resume: "",
-                  areaOfInterest: "",
-                  designation: ""
-                });
-              setFileDetails(null);
-              setFileRaw(null);
-              setOpen(false)
-              alert({ message: res.data.message, type: "success" });
-            }
-          })
-            .catch((error) => {
-              setOpen(false)
-              alert({ message: "An unexpected error occurred. Please try again", type: "warning" });
-              console.log(error);
+      // var rawLog = FileRaw
+      // var dataSend = { dataReq: { data: rawLog, name: FileDetails.name, type: FileDetails.type }, fname: "uploadFilesToGoogleDrive" };
+      // fetch('https://script.google.com/macros/s/AKfycbyhScudEcnCm-ucQ4F92VOXrfrpRUL7vUcbzn0ZYqqTo8Kbo05bI0YEwF-d3hIVeejU1w/exec',
+      //   { method: "POST", body: JSON.stringify(dataSend) })
+      //   .then(res => res.json())
+      //   .then((a) => {
+      //     var link = a.url.toString();
+      axios.post(process.env.REACT_APP_BACKEND_URL + "api/dropbox/applyviadropbox", {
+        "dropbox_app": {
+          CNIC: dropbox.CNIC,
+          fullname: dropbox.fullname,
+          email: dropbox.email,
+          phone: dropbox.phone,
+          city: dropbox.city,
+          // resume: link,
+          areaOfInterest: dropbox.areaOfInterest,
+          designation: dropbox.designation,
+        }
+      }).then((res) => {
+        if (res.data.error === true) {
+          setOpen(false)
+          alert({ message: res.data.message, type: "warning" });
+        } else {
+          setDropbox(
+            {
+              CNIC: "",
+              fullname: "",
+              email: "",
+              phone: "",
+              city: "",
+              // resume: "",
+              areaOfInterest: "",
+              designation: ""
             });
+          // setFileDetails(null);
+          // setFileRaw(null);
+          setOpen(false)
+          alert({ message: res.data.message, type: "success" });
+        }
+      })
+        .catch((error) => {
+          setOpen(false)
+          alert({ message: "An unexpected error occurred. Please try again", type: "warning" });
+          console.log(error);
+        });
 
-        }).catch((e) => {
-          setOpen(false);
-          console.log(e);
-          alert({ message: "File Uploaded Failed. Please try again", type: "warning" })
-        })
+      // }).catch((e) => {
+      //   setOpen(false);
+      //   console.log(e);
+      //   alert({ message: "File Uploaded Failed. Please try again", type: "warning" })
+      // })
     }
   }
 
@@ -191,17 +192,17 @@ export default function Careers() {
   //   )
   // }
 
-  function handleFileButton(e) {
-    setOpen(true);
-    var file = e.target.files[0]
-    var reader = new FileReader()
-    reader.readAsDataURL(file)
-    reader.onload = function (e) {
-      setFileRaw(reader.result.split(',')[1]);
-      setFileDetails(file)
-      setOpen(false);
-    }
-  }
+  // function handleFileButton(e) {
+  //   setOpen(true);
+  //   var file = e.target.files[0]
+  //   var reader = new FileReader()
+  //   reader.readAsDataURL(file)
+  //   reader.onload = function (e) {
+  //     setFileRaw(reader.result.split(',')[1]);
+  //     setFileDetails(file)
+  //     setOpen(false);
+  //   }
+  // }
 
   //XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx
   //Use Effects
@@ -223,13 +224,13 @@ export default function Careers() {
   }, []);
 
   useEffect(() => {
-    let temp = [];
-    if (emp) {
-      temp = data.filter((x) => x.forEmployees === true)
-    }
-    else {
-      temp = data.filter((x) => x.forEmployees === false);
-    }
+    let temp = data;
+    // if (emp) {
+    //   temp = data.filter((x) => x.forEmployees === true)
+    // }
+    // else {
+    //   temp = data.filter((x) => x.forEmployees === false);
+    // }
     if (currDepartment) {
       if (currDepartment !== "All") {
         if (temp) {
@@ -238,7 +239,7 @@ export default function Careers() {
       }
     }
     setList(temp);
-  }, [data, currDepartment, emp]);
+  }, [data, currDepartment]);
 
 
   useEffect(() => {
@@ -249,11 +250,11 @@ export default function Careers() {
             <div className="careers__section">
               <div className="careers__listing">
                 <div className="careers__section__heading">
-                  <div className="section__heading">{emp ? "INTERNAL OPEN POSITIONS" : "OPEN POSITIONS"}</div>
+                  <div className="section__heading">{"OPEN POSITIONS"}</div>
                   <div className="section__heading__text">
                     {!currDepartment
                       ? `Showing ${list.length} available positions for All Departments`
-                      : `Showing ${list.length} available positions for Department ${currDepartment}`}
+                      : `Showing ${list.length} available positions for ${currDepartment} Department`}
                   </div>
                   <div className="divider" />
                 </div>
@@ -399,6 +400,17 @@ export default function Careers() {
                   type="text" placeholder="Name" className="cf__input" />
               </div>
               <div className="cf__field">
+                <div className="cf__label">EMAIL</div>
+                <input
+                  name="email"
+                  type="email"
+                  value={dropbox.email}
+                  onChange={dropboxChange}
+                  placeholder="name@example.com"
+                  className="cf__input"
+                />
+              </div>
+              <div className="cf__field">
                 <div className="cf__label">CNIC</div>
                 <input
                   name="CNIC"
@@ -432,16 +444,11 @@ export default function Careers() {
                   className="cf__input"
                 />
               </div>
-              <div className="cf__field">
-                <div className="cf__label">EMAIL</div>
-                <input
-                  name="email"
-                  type="email"
-                  value={dropbox.email}
-                  onChange={dropboxChange}
-                  placeholder="name@example.com"
-                  className="cf__input"
-                />
+              
+            </div>
+            <div className="dropbox__form__right">
+              <div className="dropbox__form__left__heading">
+                STEP <span className="span__num_2">2</span>
               </div>
               <div className="cf__field">
                 <div className="cf__label">City</div>
@@ -458,11 +465,6 @@ export default function Careers() {
                     return <option value={item}>{item}</option>
                   })}
                 </select>
-              </div>
-            </div>
-            <div className="dropbox__form__right">
-              <div className="dropbox__form__left__heading">
-                STEP <span className="span__num_2">2</span>
               </div>
               <div className="cf__field">
                 <div className="cf__label">Current/Previous Designation</div>
@@ -491,7 +493,7 @@ export default function Careers() {
                   })}
                 </select>
               </div>
-              <div className="cf__resume__field">
+              {/* <div className="cf__resume__field">
                 <div className="cf__label">UPLOAD RESUME</div>
                 <div className="cf__resume">
 
@@ -513,13 +515,13 @@ export default function Careers() {
                     }
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
           <div onClick={dropboxSubmit} className="submit">SUBMIT</div>
         </div>
       </div>
-      <Modal showModal={showModal} emp={emp} setShowModal={setShowModal} showItem={showItem} />
+      <Modal showModal={showModal} setShowModal={setShowModal} showItem={showItem} />
       <GlobalStyle />
       <Footer />
     </div>

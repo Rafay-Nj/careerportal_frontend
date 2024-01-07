@@ -122,10 +122,7 @@ const JobApplication = ({ data }) => {
       <CardHeader title="Dropbox Application" />
       <Divider />
       <CardContent>
-        <Box sx={{ height: 325, position: 'relative' }} >
-          {/* <Doughnut data={pieData} options={options} /> */}
-        </Box>
-        <Box sx={{ display: 'flex', justifyContent: 'center', pt: 2 }} >
+        <Box sx={{ display: 'flex', justifyContent: 'space-around', pt: 2 }} >
           {getKey()}
         </Box>
       </CardContent>

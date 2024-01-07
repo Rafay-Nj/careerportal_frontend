@@ -22,7 +22,7 @@ const PostJob = () => {
     jobCity: [],
     jobType: "",
     reqExperience: "",
-    forEmployees: "",
+    forEmployees: false,
     jobDescription: "",
     jobRequirements: "",
     jobIncentives: "",
@@ -80,7 +80,7 @@ const PostJob = () => {
               jobCity: [],
               jobType: "",
               reqExperience: "",
-              forEmployees: "",
+              forEmployees: false,
               jobDescription: "",
               jobRequirements: "",
               jobIncentives: "",
@@ -116,7 +116,7 @@ const PostJob = () => {
                 required
               />
             </div>
-            <div className="textField">
+            {/* <div className="textField">
               <FormControl fullWidth>
                 <InputLabel size="small" id="demo-simple-select-label">
                   For Employees? *
@@ -135,6 +135,56 @@ const PostJob = () => {
                 >
                   <MenuItem value={true}>For Employees</MenuItem>
                   <MenuItem value={false}>Not for Employees</MenuItem>
+                </Select>
+              </FormControl>
+            </div> */}
+            <div className="textField">
+              <FormControl fullWidth>
+                <InputLabel size="small" id="demo-simple-select-label">
+                  Job Department *
+                </InputLabel>
+                <Select
+                  labelId="demo-simple-select-label"
+                  style={{ textAlign: "left" }}
+                  id="demo-simple-select"
+                  name="jobDepartment"
+                  value={jobForm.jobDepartment}
+                  onChange={handleChange}
+                  label="Job Department"
+                  variant="outlined"
+                  size="small"
+                  required
+                >
+                  <MenuItem value="Finance & Accounts">
+                    Finance & Accounts
+                  </MenuItem>
+                  <MenuItem value="Logistics">
+                    Logistics
+                  </MenuItem>
+                  <MenuItem value="Information Technology">
+                    Information Technology
+                  </MenuItem>
+                  <MenuItem value="Pharma Sales">
+                    Pharma Sales
+                  </MenuItem>
+                  <MenuItem value="Administration">Administration</MenuItem>
+                  <MenuItem value="Health Care">
+                    Health Care
+                  </MenuItem>
+                  <MenuItem value="Consumer">
+                    Consumer
+                  </MenuItem>
+                  <MenuItem value="Mobile Financial Services">
+                    Mobile Financial Services
+                  </MenuItem>
+                  {/* <MenuItem value="Management">Management</MenuItem> */}
+                  <MenuItem value="Internal Audit">Internal Audit</MenuItem>
+                  <MenuItem value="Human Resources">
+                    Human Resources
+                  </MenuItem>
+                  <MenuItem value="Telecommunication & Allied Business">
+                    Telecommunication & Allied Business
+                  </MenuItem>
                 </Select>
               </FormControl>
             </div>
@@ -245,58 +295,9 @@ const PostJob = () => {
               <CitySelect personName={jobForm.jobCity} setPersonName={(item) => { handleChangeCity(item) }} />
             </div>
           </div>
-          <div className="textField__container">
-            <div className="textField__big">
-              <FormControl fullWidth>
-                <InputLabel size="small" id="demo-simple-select-label">
-                  Job Department *
-                </InputLabel>
-                <Select
-                  labelId="demo-simple-select-label"
-                  style={{ textAlign: "left" }}
-                  id="demo-simple-select"
-                  name="jobDepartment"
-                  value={jobForm.jobDepartment}
-                  onChange={handleChange}
-                  label="Job Department"
-                  variant="outlined"
-                  size="small"
-                  required
-                >
-                  <MenuItem value="Finance & Accounts">
-                    Finance & Accounts
-                  </MenuItem>
-                  <MenuItem value="Logistics">
-                    Logistics
-                  </MenuItem>
-                  <MenuItem value="Information Technology">
-                    Information Technology
-                  </MenuItem>
-                  <MenuItem value="Pharma Sales">
-                    Pharma Sales
-                  </MenuItem>
-                  <MenuItem value="Administration">Administration</MenuItem>
-                  <MenuItem value="Health Care">
-                    Health Care
-                  </MenuItem>
-                  <MenuItem value="Consumer">
-                    Consumer
-                  </MenuItem>
-                  <MenuItem value="Mobile Financial Services">
-                    Mobile Financial Services
-                  </MenuItem>
-                  {/* <MenuItem value="Management">Management</MenuItem> */}
-                  <MenuItem value="Internal Audit">Internal Audit</MenuItem>
-                  <MenuItem value="Human Resources">
-                    Human Resources
-                  </MenuItem>
-                  <MenuItem value="Telecommunication & Allied Business">
-                    Telecommunication & Allied Business
-                  </MenuItem>
-                </Select>
-              </FormControl>
-            </div>
-          </div>
+          {/* <div className="textField__container">
+            
+          </div> */}
           <div className="textField__big">
             <TextField
               fullWidth

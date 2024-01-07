@@ -46,7 +46,7 @@ function Admin() {
                                 <Tab label="Post Job" value="post" />
                                 <Tab label="Open Jobs" value="open" />
                                 <Tab label="Closed Jobs" value="closed" />
-                                <Tab label="Add Employees" value="add" />
+                                {/* <Tab label="Add Employees" value="add" /> */}
                                 <Tab label="Dropbox" value="dropbox" />
                             </TabList>
                         </Box>
@@ -54,7 +54,7 @@ function Admin() {
                         <TabPanel value="post"> <AdminJob /> </TabPanel>
                         <TabPanel value="open"> <AdminOpenJob /> </TabPanel>
                         <TabPanel value="closed"> <AdminClosedJob /> </TabPanel>
-                        <TabPanel value="add"> <AdminAddEmployees /> </TabPanel>
+                        {/* <TabPanel value="add"> <AdminAddEmployees /> </TabPanel> */}
                         <TabPanel value="dropbox"> <Dropbox /> </TabPanel>
                     </TabContext>
                 </Box>

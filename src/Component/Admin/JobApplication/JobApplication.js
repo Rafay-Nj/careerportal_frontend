@@ -608,7 +608,7 @@ export default function JobApplication() {
         </div>
         {editMode ? null : (
           <>
-            {AllApplicants ? (
+            {/* {AllApplicants ? (
               <>
                 <div className="export__btn">
                   <CsvDownload
@@ -636,7 +636,7 @@ export default function JobApplication() {
               </>
             ) : (
               <div className="export__btn__loading">Waiting for Data</div>
-            )}
+            )} */}
             <Box
               sx={{ width: "80%", typography: "body1", padding: "15px 10%" }}
             >

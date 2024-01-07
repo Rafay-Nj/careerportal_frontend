@@ -51,12 +51,12 @@ export default function AdminDashboard() {
                     <NoOfOpenJobs data={(allData && allData.numOpenJobs !== null) ? allData.numOpenJobs : null} />
                 </div>
                 <div className="AdminDashboard__box_1_content">
-                    <NoOfEmployees data={(allData && allData.numEmployees !== null) ? allData.numEmployees : null} />
+                    <NoOfEmployees data={(allData && allData.numTotalJobApps !== null && allData.numTotalDropboxApps !== null) ? allData : null} />
                 </div>
             </div>
-            <div className="AdminDashboard__box_2">
+            {/* <div className="AdminDashboard__box_2">
                 <JobApplicationsOverTime data={(allData && allData.appArray && allData.dropboxAppArray) ? { "jobapps": allData.appArray, "dropboxapps": allData.dropboxAppArray } : null} />
-            </div>
+            </div> */}
             <div className="AdminDashboard__box_3">
                 <div className="AdminDashboard__box_3__content">
                     <JobApplication

@@ -8,13 +8,14 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 50px;
+    margin-top: 30px;
 }
 .AdminDashboard__box_1_content{
 min-width: 24.5%;
 max-width: 24.5%;
 }
 .AdminDashboard__box_2{
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
 }
 .AdminDashboard__box_3{
     display: flex;

@@ -21,13 +21,13 @@ const NoOfEmployees = ({data}) => {
                 gutterBottom
                 variant="overline"
               >
-                Number Of Employees
+                Number Of Total Applications
               </Typography>
               <Typography
                 color="textPrimary"
                 variant="h4"
               >
-                {(data!==null) ? data : "---"}
+                {(data!==null) ? data.numTotalJobApps+data.numTotalDropboxApps : "---"}
               </Typography>
             </Grid>
             <Grid item>
